@@ -13,7 +13,7 @@ class App extends Component {
       }
   }
   componentDidMount() {
-    fetch('localehost:3001/api/albums')
+    fetch('http://localhost:3001/api/albums')
       .then(response => response.json())
       .then(albums=> this.setState({albums}))
       console.log(this.state)
@@ -22,9 +22,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className = "App">
-        
-        <Albums albums={albums} />
+      <div className = "App">      
+        <Albums albums={this.state.albums} />
       </div>
     )
   };
