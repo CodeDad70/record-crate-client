@@ -1,10 +1,17 @@
 import React from 'react';
+import './Albums.css';
 
 const Albums = (props) => (
   <div>
-    <h1>Albums !! </h1>
+    <h1>Albums I Own </h1>
     {props.albums.map(album => 
-      <h3> {album.name} </h3>
+      <div className = "AlbumCard">
+          <div className = "card card-1">
+        <h3> {album.name} </h3>
+        <p> ${album.price} </p>
+        <img className="AlbumImage" src = {album.image_url} alt={album.name} / >  
+      </div>   
+      </div>
     )}
   </div>
 );

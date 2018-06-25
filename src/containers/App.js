@@ -3,16 +3,23 @@ import '../App.css'
 import Albums from './Albums'
 
 
-const albums = [
-  {
-    name: "the cure"
-  },
-  {
-    name: "the smiths"
-  }
-]
 
 class App extends Component {
+  constructor(props) {
+    super(props) 
+      this.state = { 
+        albums: []
+      
+      }
+  }
+  componentDidMount() {
+    fetch('localehost:3001/api/albums')
+      .then(response => response.json())
+      .then(albums=> this.setState({albums}))
+      console.log(this.state)
+  }
+
+
   render() {
     return (
       <div className = "App">
