@@ -5,7 +5,7 @@ const Albums = (props) => (
   <div>
     <h1>Albums I Own </h1>
     {props.albums.map(album => 
-      <div className = "AlbumCard">
+      <div key={album.id} className = "AlbumCard">
           <div className = "card card-1">
         <h3> {album.name} </h3>
         <p> ${album.price} </p>
