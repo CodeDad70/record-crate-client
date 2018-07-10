@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Albums.css';
 import AlbumCard from '../components/AlbumCard'
 import AlbumForm from './AlbumForm'
+import {connect} from 'react-redux';
 
 class Albums extends Component {
   render() {
@@ -14,5 +15,11 @@ class Albums extends Component {
     )
   }
 }
-export default Albums;
+const mapStateToProps = (state) => {
+  return ({
+    albums: state.albums
+  })
+}
+
+export default connect(mapStateToProps)(Albums);
 

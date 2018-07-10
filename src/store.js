@@ -5,7 +5,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 
-const albumsReducer = (state =[], action) => {
+const albums = (state =[], action) => {
   switch(action.type) {
     case 'GET_ALBUMS_SUCCESS':
       return action.albums;
@@ -16,7 +16,7 @@ const albumsReducer = (state =[], action) => {
 }
 
 const reducers = combineReducers ({
-  album: albumsReducer
+  albums: albums
 });
 const middleware = [thunk]; 
 
