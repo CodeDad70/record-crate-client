@@ -10,7 +10,8 @@ import albumFormData from './reducers/albumFormData';
 
 
 const reducers = combineReducers ({
-  albums
+  albums, 
+  albumFormData
 });
 const middleware = [thunk]; 
 

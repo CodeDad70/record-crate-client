@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class AlbumForm extends Component {
   render(){
@@ -13,4 +14,10 @@ class AlbumForm extends Component {
   }
 }
 
-export default AlbumForm
+const mapStateToProps = state => {
+  return {
+    albumFormData: state.albumFormData 
+  }
+}
+
+export default connect(mapStateToProps)(AlbumForm)
