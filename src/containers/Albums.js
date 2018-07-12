@@ -6,12 +6,11 @@ import {connect} from 'react-redux';
 import {getAlbums} from '../actions/albums';
 
 class Albums extends Component {
+  
   componentDidMount(){
-    this.props.dispatch({
-      type: 'GET_ALBUMS_SUCCESS',
-      albums: [{name:"test", artist:"Test", image_url:"test"}]
-    })
+    this.props.getAlbums()
   }
+
   render() {
     return (
       <div>
