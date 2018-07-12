@@ -3,8 +3,15 @@ import './Albums.css';
 import AlbumCard from '../components/AlbumCard'
 import AlbumForm from './AlbumForm'
 import {connect} from 'react-redux';
+import {getAlbums} from '../actions/albums';
 
 class Albums extends Component {
+  componentDidMount(){
+    this.props.dispatch({
+      type: 'GET_ALBUMS_SUCCESS',
+      albums: [{name:"test", artist:"Test", image_url:"test"}]
+    })
+  }
   render() {
     return (
       <div>
@@ -21,5 +28,5 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps)(Albums);
+export default connect(mapStateToProps,{ getAlbums })(Albums);
 
