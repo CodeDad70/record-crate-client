@@ -4,7 +4,7 @@ import {
   combineReducers
 } from 'redux';
 import thunk from 'redux-thunk';
-import albums from './reducers/albums';
+import albums from './reducers/albums'
 
 
 
