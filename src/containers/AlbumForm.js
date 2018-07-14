@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {updateAlbumFormData} from '../actions/albumForm'
 
 class AlbumForm extends Component {
 
   handleOnChange = event => {
     const {name, value} = event.target
-    console.log(name)
+    const currentAlbumFormData = Object.assign({}, this.props.albumFormData,{
+      [name] : value
+    }) 
+    this.props.updateAlbumFormData(currentAlbumFormData)
   }    
 
   render(){
@@ -65,4 +69,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(AlbumForm)
+export default connect(mapStateToProps, {updateAlbumFormData})(AlbumForm)
