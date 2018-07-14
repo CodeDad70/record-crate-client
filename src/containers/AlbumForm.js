@@ -5,6 +5,7 @@ class AlbumForm extends Component {
 
   handleOnChange = event => {
     const {name, value} = event.target
+    console.log(name)
   }    
 
   render(){
