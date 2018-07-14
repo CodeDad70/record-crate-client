@@ -3,10 +3,18 @@ import {connect} from 'react-redux';
 
 class AlbumForm extends Component {
   render(){
+    const {name, price, image_url} = this.props.albumFormData
     return(
       <div>
         Add an Album
         <form>
+          <label htmlFor="name">Name: </label>
+          <input 
+            type="text"
+            name = "name"
+            value = {name}
+            >
+            </input>
 
         </form>
       </div>
