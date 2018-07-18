@@ -22,12 +22,12 @@ export const getAlbums =  () => {
 
 export const createAlbum = album => {
   return dispatch => {
-    return fetch (`${API_URL}/surfboards`, {
+    return fetch (`${API_URL}/albums`, {
     method: 'POST',
     headers: {
       'Content-type' : 'application/json'
     },
-    data: JSON.stringify(album)
+    body: JSON.stringify({album: album})
     })
     .then (response => response.json())
     

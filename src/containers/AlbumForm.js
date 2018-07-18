@@ -82,4 +82,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateAlbumFormData})(AlbumForm)
+export default connect(mapStateToProps, {
+  updateAlbumFormData,
+  createAlbum
+})(AlbumForm)
