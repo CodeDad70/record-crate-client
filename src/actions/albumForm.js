@@ -6,3 +6,10 @@ export const updateAlbumFormData = albumFormData => {
     albumFormData
   }
 }
+
+export const resetAlbumForm = () => {
+  return {
+    type: "RESET_ALBUM_FORM"
+  }
+
+}

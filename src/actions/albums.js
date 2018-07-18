@@ -1,3 +1,5 @@
+import {resetAlbumForm} from './albumForm';
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 //action creators
@@ -37,7 +39,10 @@ export const createAlbum = album => {
     body: JSON.stringify({album: album})
     })
     .then (response => response.json())
-    .then(album => dispatch(addAlbum(album)))
+    .then(album => {
+      dispatch(addAlbum(album))
+      dispatch(resetAlbumForm())
+    })
     .catch(error=>console.log(error))
   }
 }
