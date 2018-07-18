@@ -9,6 +9,13 @@ const setAlbums = albums => {
   }
 }
 
+const addAlbum = album => {
+  return {
+    type: 'CREATE_ALBUM_SUCCESS',
+    album
+  }
+}
+
 //  -- Async Actions -- 
 export const getAlbums =  () => {
   return dispatch => {
@@ -30,7 +37,7 @@ export const createAlbum = album => {
     body: JSON.stringify({album: album})
     })
     .then (response => response.json())
-    
+    .then(album => dispatch(addAlbum(album)))
     .catch(error=>console.log(error))
   }
 }
