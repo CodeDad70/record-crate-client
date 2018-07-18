@@ -20,6 +20,20 @@ export const getAlbums =  () => {
   }
 }
 
+export const createAlbum = album => {
+  return dispatch => {
+    return fetch (`${API_URL}/surfboards`, {
+    method: 'POST',
+    headers: {
+      'Content-type' : 'application/json'
+    },
+    data: JSON.stringify(album)
+    })
+    .then (response => response.json())
+    
+    .catch(error=>console.log(error))
+  }
+}
 
 
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {updateAlbumFormData} from '../actions/albumForm'
+import {updateAlbumFormData} from '../actions/albumForm';
+import {createAlbum} from '../actions/albums'
 
 class AlbumForm extends Component {
 
@@ -14,7 +15,7 @@ class AlbumForm extends Component {
   
   handleOnSubmit =  event => {
     event.preventDefault()
-    console.log('for success')
+    this.props.createAlbum(this.props.albumFormData)
   }
 
   render(){
